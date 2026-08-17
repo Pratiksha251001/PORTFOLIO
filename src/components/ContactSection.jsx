@@ -15,7 +15,7 @@ function ContactSection({ darkMode }) {
   return (
     <div
       id="contact"
-      className={`my-12 lg:my-16 relative mt-24 transition-colors duration-500 max-w-7xl mx-auto px-8 py-20 scroll-mt-28 ${darkMode ? "text-white" : "text-gray-900"}`}
+      className={`my-8 sm:my-16 lg:my-20 relative transition-colors duration-500 max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20 scroll-mt-28 ${darkMode ? "text-white" : "text-gray-900"}`}
     >
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
@@ -31,74 +31,90 @@ function ContactSection({ darkMode }) {
           CONTACT
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:items-center">
         <ContactForm darkMode={darkMode} />
-        <div className="lg:w-3/4 ">
-          <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
+        <div className="w-full lg:w-3/4">
+          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-9">
+            <p className="text-sm sm:text-base md:text-xl flex items-center gap-3">
               <a
                 href={`mailto:${personalData.email}`}
-                className="flex items-center gap-3 group"
+                className="flex items-center gap-3 group break-all"
               >
-                <MdAlternateEmail
-                  className={`p-2 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
-                  size={36}
-                />
+                <span className="shrink-0">
+                  <MdAlternateEmail
+                    className={`p-2 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
+                    size={36}
+                  />
+                </span>
                 <span
-                  className={`transition-colors ${darkMode ? "text-white" : "text-gray-700"}`}
+                  className={`transition-colors text-xs sm:text-sm md:text-base ${darkMode ? "text-white" : "text-gray-700"}`}
                 >
                   {personalData.email}
                 </span>
               </a>
             </p>
 
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            <p className="text-sm sm:text-base md:text-xl flex items-center gap-3">
               <a
                 href={`tel:${personalData.phone}`}
                 className="flex items-center gap-3 group"
               >
-                <IoMdCall
-                  className={`p-2 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
-                  size={36}
-                />
+                <span className="shrink-0">
+                  <IoMdCall
+                    className={`p-2 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
+                    size={36}
+                  />
+                </span>
                 <span
-                  className={`transition-colors ${darkMode ? "text-white" : "text-gray-700"}`}
+                  className={`transition-colors text-xs sm:text-sm md:text-base ${darkMode ? "text-white" : "text-gray-700"}`}
                 >
                   {personalData.phone}
                 </span>
               </a>
             </p>
 
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            <p className="text-sm sm:text-base md:text-xl flex items-center gap-3">
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalData.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group"
               >
-                <CiLocationOn
-                  className={`p-2 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
-                  size={36}
-                />
+                <span className="shrink-0">
+                  <CiLocationOn
+                    className={`p-2 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
+                    size={36}
+                  />
+                </span>
                 <span
-                  className={`transition-colors ${darkMode ? "text-white" : "text-gray-700"}`}
+                  className={`transition-colors text-xs sm:text-sm md:text-base ${darkMode ? "text-white" : "text-gray-700"}`}
                 >
                   {personalData.address}
                 </span>
               </a>
             </p>
           </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" to={personalData.github} className="group">
+          <div className="mt-6 sm:mt-8 lg:mt-16 flex flex-wrap items-center gap-4 sm:gap-5 lg:gap-8">
+            <Link
+              target="_blank"
+              to={personalData.github}
+              className="group"
+              aria-label="GitHub Profile"
+            >
               <IoLogoGithub
-                className={`p-3 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
-                size={48}
+                className={`p-2.5 sm:p-3 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
+                size={42}
               />
             </Link>
-            <Link target="_blank" to={personalData.linkedIn} className="group">
+            <Link
+              target="_blank"
+              to={personalData.linkedIn}
+              className="group"
+              aria-label="LinkedIn Profile"
+            >
               <BiLogoLinkedin
-                className={`p-3 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
-                size={48}
+                className={`p-2.5 sm:p-3 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
+                size={42}
               />
             </Link>
             {personalData.Preskilet && (
@@ -106,9 +122,10 @@ function ContactSection({ darkMode }) {
                 target="_blank"
                 to={personalData.Preskilet}
                 className="group"
+                aria-label="Preskilet Profile"
               >
                 <div
-                  className={`p-3 rounded-full transition-all duration-300 cursor-pointer flex items-center justify-center ${
+                  className={`p-2.5 sm:p-3 rounded-full transition-all duration-300 cursor-pointer flex items-center justify-center ${
                     darkMode
                       ? "bg-[#8b98a5] group-hover:bg-[#16f2b3]"
                       : "bg-slate-200 group-hover:bg-[#11d3bb]"
@@ -117,19 +134,11 @@ function ContactSection({ darkMode }) {
                   <img
                     src={Preskilet1}
                     alt="Preskilet"
-                    className="w-6 h-6 object-contain"
+                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
                   />
                 </div>
               </Link>
             )}
-            {/*} {personalData.twitter && (
-              <Link target="_blank" to={personalData.twitter} className="group">
-                <FaXTwitter
-                  className={`p-3 rounded-full transition-all duration-300 cursor-pointer ${darkMode ? "bg-[#8b98a5] text-gray-800 group-hover:bg-[#16f2b3] group-hover:scale-110" : "bg-slate-200 text-slate-700 group-hover:bg-[#11d3bb] group-hover:text-white group-hover:scale-110"}`}
-                  size={48}
-                />
-              </Link>
-            )}*/}
           </div>
         </div>
       </div>

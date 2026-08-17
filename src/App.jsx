@@ -33,8 +33,8 @@ function App() {
       {/* Background Decorations */}
       <div className={`fixed inset-0 grid-bg pointer-events-none transition-opacity duration-500 z-0 ${darkMode ? 'opacity-30' : 'opacity-[0.05]'}`}></div>
       
-      {/* Vertical Grid Lines for the whole page */}
-      <div className="fixed inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-7xl px-8 pointer-events-none z-0">
+      {/* Vertical Grid Lines for the whole page (shown on md+ screens) */}
+      <div className="hidden md:block fixed inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-7xl px-4 sm:px-8 pointer-events-none z-0">
         <div className={`h-full w-full border-x flex justify-around ${darkMode ? 'border-white/[0.03]' : 'border-slate-900/[0.03]'}`}>
           <div className={`h-full border-r ${darkMode ? 'border-white/[0.03]' : 'border-slate-900/[0.03]'}`}></div>
           <div className={`h-full border-r ${darkMode ? 'border-white/[0.03]' : 'border-slate-900/[0.03]'}`}></div>
@@ -43,14 +43,14 @@ function App() {
       </div>
       
       {/* Top Soft Glow */}
-      <div className={`fixed top-0 left-1/2 -translate-x-1/2 w-full h-[300px] pointer-events-none overflow-hidden transition-opacity duration-500 ${darkMode ? 'opacity-60' : 'opacity-40'}`}>
+      <div className={`fixed top-0 left-1/2 -translate-x-1/2 w-full h-[200px] sm:h-[300px] pointer-events-none overflow-hidden transition-opacity duration-500 ${darkMode ? 'opacity-60' : 'opacity-40'}`}>
         <div className="absolute top-[-50px] left-[-10%] w-[40%] h-full bg-cyan-400/10 blur-[120px] rounded-full"></div>
         <div className="absolute top-[-80px] left-1/2 -translate-x-1/2 w-[50%] h-full bg-blue-500/10 blur-[150px] rounded-full"></div>
         <div className="absolute top-[-50px] right-[-10%] w-[40%] h-full bg-purple-400/10 blur-[120px] rounded-full"></div>
       </div>
 
-      <div className={`fixed top-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-600/[0.05] blur-[120px] rounded-full pointer-events-none transition-opacity duration-500 ${darkMode ? 'opacity-100' : 'opacity-50'}`}></div>
-      <div className={`fixed bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-cyan-600/[0.05] blur-[120px] rounded-full pointer-events-none transition-opacity duration-500 ${darkMode ? 'opacity-100' : 'opacity-50'}`}></div>
+      <div className={`fixed top-[-10%] right-[-10%] w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-purple-600/[0.05] blur-[120px] rounded-full pointer-events-none transition-opacity duration-500 ${darkMode ? 'opacity-100' : 'opacity-50'}`}></div>
+      <div className={`fixed bottom-[-10%] left-[-10%] w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-cyan-600/[0.05] blur-[120px] rounded-full pointer-events-none transition-opacity duration-500 ${darkMode ? 'opacity-100' : 'opacity-50'}`}></div>
 
       {/* Navbar */}
       <div className="fixed top-0 left-0 w-full z-[1000]">
@@ -61,33 +61,34 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <div className="pt-24">
+      <div className="pt-16 sm:pt-24">
         <Routes>
-        <Route path="/" element={
-          <div className="space-y-0">
-            <Hero darkMode={darkMode} />
-            <About darkMode={darkMode} />
-            <Internship darkMode={darkMode} />
-            <Skills darkMode={darkMode} />
-            <Projects darkMode={darkMode} />
-            <Certification darkMode={darkMode} />
-            <ContactSection darkMode={darkMode} />
-          </div>
-        } />
-        <Route path="/privacy-policy" element={<PrivacyPolicy darkMode={darkMode} />} />
-        <Route path="/disclaimer" element={<Disclaimer darkMode={darkMode} />} />
-      </Routes>
+          <Route path="/" element={
+            <div className="space-y-0">
+              <Hero darkMode={darkMode} />
+              <About darkMode={darkMode} />
+              <Internship darkMode={darkMode} />
+              <Skills darkMode={darkMode} />
+              <Projects darkMode={darkMode} />
+              <Certification darkMode={darkMode} />
+              <ContactSection darkMode={darkMode} />
+            </div>
+          } />
+          <Route path="/privacy-policy" element={<PrivacyPolicy darkMode={darkMode} />} />
+          <Route path="/disclaimer" element={<Disclaimer darkMode={darkMode} />} />
+        </Routes>
       </div>
 
       <Footer darkMode={darkMode} />
 
       {/* Floating Scroll Top */}
-      <div className="fixed bottom-10 right-10 z-50">
+      <div className="fixed bottom-4 right-4 sm:bottom-10 sm:right-10 z-50">
         <button 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="bg-[#f02e65] p-3 rounded-full shadow-[0_0_20px_rgba(240,46,101,0.3)] hover:translate-y-[-5px] transition-all text-white"
+          className="bg-[#f02e65] p-2.5 sm:p-3 rounded-full shadow-[0_0_20px_rgba(240,46,101,0.3)] hover:translate-y-[-3px] active:translate-y-0 transition-all text-white cursor-pointer"
+          aria-label="Scroll to top"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
           </svg>
         </button>

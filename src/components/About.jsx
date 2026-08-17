@@ -23,7 +23,7 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className="relative z-10 max-w-7xl mx-auto px-8 pt-8 pb-20 space-y-20 scroll-mt-28"
+      className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 pt-6 sm:pt-8 pb-16 sm:pb-20 space-y-12 sm:space-y-20 scroll-mt-28"
     >
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
@@ -34,10 +34,10 @@ const About = ({ darkMode }) => {
       <SectionHeader title="ABOUT ME" darkMode={darkMode} />
 
       {/* Intro Section */}
-      <div className="grid md:grid-cols-2 gap-20 items-center">
-        <div className="space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div className="space-y-6">
           <p
-            className={`leading-loose text-lg font-medium transition-colors duration-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+            className={`leading-relaxed text-sm sm:text-base md:text-lg font-medium transition-colors duration-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
           >
             I am a proficient and passionate software developer with a strong
             focus on building innovative technology solutions. With experience
@@ -52,9 +52,9 @@ const About = ({ darkMode }) => {
             solutions.
           </p>
         </div>
-        <div className="relative flex justify-center lg:justify-end pr-16">
+        <div className="relative flex justify-center lg:justify-end pr-0 lg:pr-16">
           <div
-            className={`w-72 h-72 md:w-[450px] md:h-[350px] rounded-2xl overflow-hidden border transition-all duration-700 shadow-2xl grayscale hover:grayscale-0 ${darkMode ? "border-white/10" : "border-gray-200"}`}
+            className={`w-64 h-64 sm:w-80 sm:h-80 md:w-[420px] md:h-[350px] rounded-2xl overflow-hidden border transition-all duration-700 shadow-2xl grayscale hover:grayscale-0 ${darkMode ? "border-white/10" : "border-gray-200"}`}
           >
             <img
               src={meeImg}
@@ -74,38 +74,38 @@ const About = ({ darkMode }) => {
       </div>
 
       {/* Education Section */}
-      <div id="education" className="space-y-12 scroll-mt-28">
+      <div id="education" className="space-y-8 sm:space-y-12 scroll-mt-28">
         <div className="flex justify-center -translate-y-[1px]">
           <div className="w-3/4">
             <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full" />
           </div>
         </div>
         <SectionHeader title="EDUCATION" darkMode={darkMode} />
-        <div className="grid gap-8">
+        <div className="grid gap-6 sm:gap-8">
           {education.map((edu, index) => (
             <div
               key={index}
-              className={`p-8 rounded-2xl border transition-all ${darkMode ? "bg-white/[0.02] border-white/10 hover:bg-white/[0.04]" : "bg-slate-900/[0.02] border-slate-900/10 hover:bg-slate-900/[0.04]"}`}
+              className={`p-5 sm:p-8 rounded-2xl border transition-all ${darkMode ? "bg-white/[0.02] border-white/10 hover:bg-white/[0.04]" : "bg-slate-900/[0.02] border-slate-900/10 hover:bg-slate-900/[0.04]"}`}
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                <h4 className="text-xl font-bold text-[#f02e65]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2 sm:mb-4">
+                <h4 className="text-lg sm:text-xl font-bold text-[#f02e65]">
                   {edu.institution}
                 </h4>
                 <span
-                  className={`text-sm font-bold ${darkMode ? "text-gray-500" : "text-gray-400"}`}
+                  className={`text-xs sm:text-sm font-bold ${darkMode ? "text-gray-500" : "text-gray-400"}`}
                 >
                   {edu.period}
                 </span>
               </div>
-              <div className="flex flex-col md:flex-row md:items-center justify-between">
-                <p className="font-semibold">{edu.degree}</p>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <p className="font-semibold text-sm sm:text-base">{edu.degree}</p>
                 <p
-                  className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+                  className={`text-xs sm:text-sm ${darkMode ? "text-gray-400" : "text-gray-600"}`}
                 >
                   {edu.location}
                 </p>
               </div>
-              <p className="mt-4 text-[#11d3bb] font-mono text-sm">
+              <p className="mt-3 sm:mt-4 text-[#11d3bb] font-mono text-xs sm:text-sm">
                 {edu.info}
               </p>
             </div>

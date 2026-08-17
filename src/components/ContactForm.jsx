@@ -37,19 +37,19 @@ function ContactForm({ darkMode }) {
 
   return (
     <div
-      className={`p-8 rounded-2xl border transition-all ${darkMode ? "bg-white/[0.02] border-white/10 shadow-2xl" : "bg-white border-slate-200 shadow-xl"}`}
+      className={`p-5 sm:p-8 rounded-2xl border transition-all ${darkMode ? "bg-white/[0.02] border-white/10 shadow-2xl" : "bg-white border-slate-200 shadow-xl"}`}
     >
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
         <div>
           <label
-            className={`block text-sm font-bold mb-2 ${darkMode ? "text-gray-400" : "text-slate-600"}`}
+            className={`block text-xs sm:text-sm font-bold mb-1.5 sm:mb-2 ${darkMode ? "text-gray-400" : "text-slate-600"}`}
           >
             NAME
           </label>
           <input
             type="text"
             required
-            className={`w-full px-4 py-3 rounded-xl border outline-none transition-all ${darkMode ? "bg-white/5 border-white/10 text-white focus:border-[#11d3bb]" : "bg-slate-50 border-slate-200 text-slate-900 focus:border-[#11d3bb]"}`}
+            className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border outline-none text-base transition-all ${darkMode ? "bg-white/5 border-white/10 text-white focus:border-[#11d3bb]" : "bg-slate-50 border-slate-200 text-slate-900 focus:border-[#11d3bb]"}`}
             placeholder="Your Name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -57,14 +57,14 @@ function ContactForm({ darkMode }) {
         </div>
         <div>
           <label
-            className={`block text-sm font-bold mb-2 ${darkMode ? "text-gray-400" : "text-slate-600"}`}
+            className={`block text-xs sm:text-sm font-bold mb-1.5 sm:mb-2 ${darkMode ? "text-gray-400" : "text-slate-600"}`}
           >
             EMAIL
           </label>
           <input
             type="email"
             required
-            className={`w-full px-4 py-3 rounded-xl border outline-none transition-all ${darkMode ? "bg-white/5 border-white/10 text-white focus:border-[#11d3bb]" : "bg-slate-50 border-slate-200 text-slate-900 focus:border-[#11d3bb]"}`}
+            className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border outline-none text-base transition-all ${darkMode ? "bg-white/5 border-white/10 text-white focus:border-[#11d3bb]" : "bg-slate-50 border-slate-200 text-slate-900 focus:border-[#11d3bb]"}`}
             placeholder="your@email.com"
             value={formData.email}
             onChange={(e) =>
@@ -74,14 +74,14 @@ function ContactForm({ darkMode }) {
         </div>
         <div>
           <label
-            className={`block text-sm font-bold mb-2 ${darkMode ? "text-gray-400" : "text-slate-600"}`}
+            className={`block text-xs sm:text-sm font-bold mb-1.5 sm:mb-2 ${darkMode ? "text-gray-400" : "text-slate-600"}`}
           >
             MESSAGE
           </label>
           <textarea
             required
             rows="4"
-            className={`w-full px-4 py-3 rounded-xl border outline-none transition-all resize-none ${darkMode ? "bg-white/5 border-white/10 text-white focus:border-[#11d3bb]" : "bg-slate-50 border-slate-200 text-slate-900 focus:border-[#11d3bb]"}`}
+            className={`w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border outline-none text-base transition-all resize-none ${darkMode ? "bg-white/5 border-white/10 text-white focus:border-[#11d3bb]" : "bg-slate-50 border-slate-200 text-slate-900 focus:border-[#11d3bb]"}`}
             placeholder="Tell me about your project..."
             value={formData.message}
             onChange={(e) =>
@@ -91,7 +91,7 @@ function ContactForm({ darkMode }) {
         </div>
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-[#f02e65] to-[#d946ef] text-white font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(240,46,101,0.4)] transition-all transform hover:scale-[1.02]"
+          className="w-full bg-gradient-to-r from-[#f02e65] to-[#d946ef] text-white font-bold py-3.5 sm:py-4 rounded-xl hover:shadow-[0_0_20px_rgba(240,46,101,0.4)] transition-all transform active:scale-[0.98] sm:hover:scale-[1.02] text-sm sm:text-base cursor-pointer"
         >
           SEND MESSAGE
         </button>

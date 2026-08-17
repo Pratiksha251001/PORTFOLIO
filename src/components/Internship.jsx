@@ -67,7 +67,7 @@ const Internship = ({ darkMode }) => {
   return (
     <section
       id="internship"
-      className="relative z-10 max-w-7xl mx-auto px-8 py-20 scroll-mt-28"
+      className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20 scroll-mt-28"
     >
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
@@ -75,30 +75,45 @@ const Internship = ({ darkMode }) => {
         </div>
       </div>
       <SectionHeader title="EXPERIENCE INTERNSHIPS" darkMode={darkMode} />
-      <div className="grid gap-12">
+      <div className="grid gap-8 sm:gap-12">
         {internships.map((item, index) => (
-          <div key={index} className="relative pl-8 border-l border-white/10">
-            <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#f02e65] shadow-[0_0_10px_#f02e65]"></div>
-            <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+          <div
+            key={index}
+            className={`relative pl-5 sm:pl-8 border-l transition-colors ${
+              darkMode ? "border-white/10" : "border-slate-900/10"
+            }`}
+          >
+            <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-[#f02e65] shadow-[0_0_10px_#f02e65]"></div>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3 sm:mb-4">
               <div>
-                <h4 className="text-2xl font-bold text-white">
+                <h4
+                  className={`text-xl sm:text-2xl font-bold ${
+                    darkMode ? "text-white" : "text-slate-900"
+                  }`}
+                >
                   {item.company}
                 </h4>
-                <p className="text-[#11d3bb] font-semibold">{item.role}</p>
+                <p className="text-[#11d3bb] text-sm sm:text-base font-semibold">
+                  {item.role}
+                </p>
               </div>
               <span
-                className={`text-sm font-bold mt-2 md:mt-0 ${darkMode ? "text-gray-500" : "text-gray-400"}`}
+                className={`text-xs sm:text-sm font-bold ${
+                  darkMode ? "text-gray-500" : "text-gray-400"
+                }`}
               >
                 {item.period}
               </span>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
               {item.points.map((point, pIndex) => (
                 <li
                   key={pIndex}
-                  className={`flex items-start space-x-3 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+                  className={`flex items-start space-x-2.5 sm:space-x-3 text-xs sm:text-sm ${
+                    darkMode ? "text-gray-400" : "text-gray-600"
+                  }`}
                 >
-                  <span className="text-[#f02e65] mt-1.5">•</span>
+                  <span className="text-[#f02e65] mt-0.5">•</span>
                   <p className="leading-relaxed">{point}</p>
                 </li>
               ))}
@@ -108,9 +123,9 @@ const Internship = ({ darkMode }) => {
                 href={item.certificate}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-4 px-4 py-2 bg-[#f02e65] text-white rounded-lg text-sm hover:bg-pink-600 transition"
+                className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-[#f02e65] text-white rounded-lg text-xs sm:text-sm font-semibold hover:bg-pink-600 transition shadow-sm"
               >
-                View Certificate 🎓
+                <span>View Certificate</span> 🎓
               </a>
             )}
           </div>

@@ -38,7 +38,7 @@ const Projects = ({ darkMode }) => {
   return (
     <section
       id="projects"
-      className="relative z-10 max-w-7xl mx-auto px-8 py-20 scroll-mt-28"
+      className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20 scroll-mt-28"
     >
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
@@ -46,26 +46,32 @@ const Projects = ({ darkMode }) => {
         </div>
       </div>
       <SectionHeader title="PROJECTS" darkMode={darkMode} />
-      <div className="grid gap-16">
+      <div className="grid gap-8 sm:gap-16">
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`group p-8 rounded-3xl border transition-all duration-500 ${darkMode ? "bg-white/[0.02] border-white/10 hover:border-[#11d3bb]/50" : "bg-slate-900/[0.02] border-slate-900/10 hover:border-[#11d3bb]/50"}`}
+            className={`group p-5 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-500 ${
+              darkMode
+                ? "bg-white/[0.02] border-white/10 hover:border-[#11d3bb]/50"
+                : "bg-slate-900/[0.02] border-slate-900/10 hover:border-[#11d3bb]/50"
+            }`}
           >
-            <div className="space-y-6">
-              <h4 className="text-3xl font-bold text-[#f02e65] group-hover:text-[#11d3bb] transition-colors">
+            <div className="space-y-4 sm:space-y-6">
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f02e65] group-hover:text-[#11d3bb] transition-colors leading-snug">
                 {project.title}
               </h4>
-              <div className="inline-block px-4 py-1.5 rounded-full bg-[#11d3bb]/10 border border-[#11d3bb]/20 text-[#11d3bb] text-sm font-mono">
+              <div className="inline-block max-w-full px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#11d3bb]/10 border border-[#11d3bb]/20 text-[#11d3bb] text-xs sm:text-sm font-mono break-words">
                 {project.tech}
               </div>
-              <ul className="grid md:grid-cols-2 gap-6">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6">
                 {project.points.map((point, pIndex) => (
                   <li
                     key={pIndex}
-                    className={`flex items-start space-x-3 text-sm leading-relaxed ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+                    className={`flex items-start space-x-2.5 sm:space-x-3 text-xs sm:text-sm leading-relaxed ${
+                      darkMode ? "text-gray-400" : "text-gray-600"
+                    }`}
                   >
-                    <span className="text-[#f02e65] mt-1">▹</span>
+                    <span className="text-[#f02e65] mt-0.5">▹</span>
                     <p>{point}</p>
                   </li>
                 ))}

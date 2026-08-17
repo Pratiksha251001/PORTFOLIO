@@ -37,7 +37,7 @@ const Certification = ({ darkMode }) => {
   return (
     <section
       id="certification"
-      className="relative z-10 max-w-7xl mx-auto px-8 py-20 space-y-24 scroll-mt-28"
+      className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20 space-y-12 sm:space-y-20 scroll-mt-28"
     >
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
@@ -46,16 +46,20 @@ const Certification = ({ darkMode }) => {
       </div>
       <SectionHeader title="CERTIFICATION" darkMode={darkMode} />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {certifications.map((cert, index) => (
           <div
             key={index}
-            className={`group p-8 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${darkMode ? "bg-white/[0.02] border-white/10 hover:bg-white/[0.05] hover:border-[#11d3bb]/50" : "bg-slate-900/[0.02] border-slate-900/10 hover:bg-slate-900/[0.05] hover:border-[#11d3bb]/50"}`}
+            className={`group p-5 sm:p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
+              darkMode
+                ? "bg-white/[0.02] border-white/10 hover:bg-white/[0.05] hover:border-[#11d3bb]/50"
+                : "bg-slate-900/[0.02] border-slate-900/10 hover:bg-slate-900/[0.05] hover:border-[#11d3bb]/50"
+            }`}
           >
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#11d3bb]/10 flex items-center justify-center text-[#11d3bb]">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#11d3bb]/10 flex items-center justify-center text-[#11d3bb]">
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -69,22 +73,24 @@ const Certification = ({ darkMode }) => {
                 </svg>
               </div>
               <p
-                className={`font-bold leading-relaxed ${darkMode ? "text-gray-200" : "text-slate-800"}`}
+                className={`font-bold text-sm sm:text-base leading-relaxed ${
+                  darkMode ? "text-gray-200" : "text-slate-800"
+                }`}
               >
                 {cert.name}
               </p>
             </div>
-            <div className="mt-6 flex items-center justify-between">
-              <span className="text-xs font-mono text-[#f02e65]">
+            <div className="mt-5 sm:mt-6 pt-3 border-t border-white/5 flex items-center justify-between">
+              <span className="text-[11px] sm:text-xs font-mono text-[#f02e65] font-semibold">
                 CERTIFIED
               </span>
               <a
                 href={cert.file}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#11d3bb] opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold underline cursor-pointer"
+                className="text-[#11d3bb] hover:text-[#0ea5e9] text-xs font-bold underline cursor-pointer py-1 px-2 rounded transition-colors"
               >
-                VIEW
+                VIEW ↗
               </a>
             </div>
           </div>
